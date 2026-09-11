@@ -3,7 +3,7 @@ import pygame
 
 # Base class for game objects
 class CircleShape(pygame.sprite.Sprite):
-    # Still not clear on the purpose of this container
+    # Containers will allow sprite objects to be handled collectively in terms of drawing and updates
     containers: tuple[pygame.sprite.Group, ...]
 
     def __init__(self, x: float, y: float, radius: float) -> None:
