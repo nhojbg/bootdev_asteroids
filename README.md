@@ -28,4 +28,4 @@ git commits to main branch "G:" document step completions to guided tutorial. A 
 
 Think that's everything for now :)
 
-![pygame power logo](pygame_powere.png)
+![pygame power logo](https://www.pygame.org/docs/_static/pygame_powered.png)
