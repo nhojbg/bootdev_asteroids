@@ -23,8 +23,7 @@ class Asteroid(CircleShape):
             new_velocities = self.velocity.rotate(vector_mod), self.velocity.rotate(-vector_mod)
             new_radius = self.radius - ASTEROID_MIN_RADIUS
             for velocity in new_velocities:
+                # Here, *self.position would add both x and y coordinates in place too
                 asteroid_fragment = Asteroid(self.position.x, self.position.y, new_radius)
                 asteroid_fragment.velocity = velocity * 1.2
-#            new_asteroid_2 = Asteroid(self.position[0], self.position[1], new_radius)
-#            new_asteroid_2.velocity = new_velocity_2 * 1.2
             
