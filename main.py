@@ -29,6 +29,7 @@ def main():
     # Assign class containers (inherited from CircleShape as tuple of pygame.sprite.Group)
     Player.containers = (updatable, drawable)
     # To handle multiple insances of Asteroid(?)
+    # - yes, and means once a new instance is called with the same name (asteroid), because it is assigned to this container/ Group a link to its memory location remains
     Asteroid.containers = (asteroids, updatable, drawable)
     AsteroidField.containers = (updatable)
     # To handle multiple instances of shots
@@ -51,6 +52,11 @@ def main():
                 log_event("player_hit")
                 print("Game over!")
                 sys.exit()
+            for shot in shots:
+                if asteroid.collides_with(shot):
+                    log_event("asteroid_shot")
+                    asteroid.split() # defined in Asteroid class (asteroid.py)
+                    shot.kill() # .kill is a pygame method applied to sprites (so not defined within these files)
         pygame.display.flip()
         dt = game_clock.tick(60) / 1000
         #print(dt)
